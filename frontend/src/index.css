@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-taxi-yellow: #FFB800;
+    --color-taxi-orange: #FF8A00;
+    --color-charcoal-bg: #070709;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #070709;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0D0E12;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262A34;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFB800;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(13, 14, 18, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-panel-glow {
+    background: rgba(19, 21, 27, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 184, 0, 0.22);
+    box-shadow: 0 0 35px rgba(255, 184, 0, 0.12);
+  }
+
+  .text-glow-yellow {
+    text-shadow: 0 0 20px rgba(255, 184, 0, 0.55);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1A1D24;
+  border-radius: 9999px;
+  height: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFB800;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(255, 184, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 1), 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFB800;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(255, 184, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
