@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Car, Activity, Sparkles, Cpu, Layers, Network, BarChart3 } from 'lucide-react';
+import { Car, Activity, Sparkles, Cpu, Layers, Network, BarChart3, Scale } from 'lucide-react';
 import { checkHealth } from '../services/api';
 
 interface NavbarProps {
@@ -38,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
     { id: 'predict', label: 'Predict Fare', icon: Sparkles },
     { id: 'architecture', label: 'Architecture', icon: Network },
     { id: 'comparison', label: 'Comparison', icon: BarChart3 },
+    { id: 'insights', label: 'Data Insights', icon: Scale },
     { id: 'analytics', label: 'Analytics', icon: Activity },
     { id: 'how-it-works', label: 'How It Works', icon: Layers },
   ];

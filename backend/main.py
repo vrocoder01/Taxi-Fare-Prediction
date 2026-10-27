@@ -18,6 +18,7 @@ from prediction import (
     load_model,
     predict_fare,
 )
+from stats_analysis import compute_statistics
 
 logger = logging.getLogger("taxi_fare_api")
 logging.basicConfig(level=logging.INFO)
@@ -74,6 +75,19 @@ async def health_check():
     """Return service health status and whether the model is loaded."""
     model_loaded = get_model() is not None
     return {"status": "healthy", "model_loaded": model_loaded}
+
+
+@app.get("/statistics")
+async def get_statistics():
+    """Return statistical analysis, correlation matrix, and hypothesis testing results."""
+    try:
+        return compute_statistics()
+    except Exception as exc:
+        logger.exception("Failed to compute statistics")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Statistical computation error: {str(exc)}",
+        )
 
 
 @app.post("/predict", response_model=PredictionResponse)

@@ -4,6 +4,7 @@ import { HeroSection } from './sections/HeroSection';
 import { PredictionSection } from './sections/PredictionSection';
 import { ArchitectureSection } from './sections/ArchitectureSection';
 import { ModelComparisonSection } from './sections/ModelComparisonSection';
+import { StatisticalAnalysisSection } from './sections/StatisticalAnalysisSection';
 import { AnalyticsSection } from './sections/AnalyticsSection';
 import { HowItWorksSection } from './sections/HowItWorksSection';
 import { Footer } from './components/Footer';
@@ -21,7 +22,7 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['overview', 'predict', 'architecture', 'comparison', 'analytics', 'how-it-works'];
+      const sections = ['overview', 'predict', 'architecture', 'comparison', 'insights', 'analytics', 'how-it-works'];
       const scrollPosition = window.scrollY + 250;
 
       for (const sectionId of sections) {
@@ -49,7 +50,8 @@ export const App: React.FC = () => {
         <HeroSection onExplore={() => handleNavigate('predict')} />
         <PredictionSection />
         <ArchitectureSection />
-        <ModelComparisonSection onNavigateToAnalytics={() => handleNavigate('analytics')} />
+        <ModelComparisonSection onNavigateToAnalytics={() => handleNavigate('insights')} />
+        <StatisticalAnalysisSection />
         <AnalyticsSection />
         <HowItWorksSection />
       </main>
